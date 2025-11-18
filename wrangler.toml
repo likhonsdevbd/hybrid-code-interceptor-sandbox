@@ -1,0 +1,35 @@
+name = "hybrid-code-interceptor-sandbox"
+main = "dist/index.js"
+compatibility_date = "2025-11-18"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers & Pages
+[env.production]
+name = "hybrid-code-interceptor-sandbox-prod"
+route = "interceptor-sandbox.yourdomain.workers.dev/*"
+
+# Vars
+[env.production.vars]
+ENVIRONMENT = "production"
+MAX_EXECUTION_TIME = "30"
+MAX_MEMORY_MB = "128"
+
+# Wrangler secrets (run: wrangler secret put SECRET_NAME)
+# - HF_TOKEN
+# - OPENAI_API_KEY
+# - DATABASE_URL
+
+# D1 Databases (optional)
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "execution_logs"
+database_id = "your-database-id"
+
+# Cron Triggers (optional)
+[env.production.triggers]
+crons = ["*/5 * * * *"]  # Every 5 minutes
+
+# Custom domains (optional)
+[[env.production.domains]]
+domain = "interceptor-sandbox.yourdomain.workers.dev"
+type = "workers"
