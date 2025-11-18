@@ -387,20 +387,6 @@ app = mcp_server.app
 
 
 # Example MCP client integration
-def create_mcp_client_example():
-    """Example of how to use MCP client to interact with the server"""
-    
-    client_example = '''
-"""
-MCP Client Example
-How to integrate with the MCP Code Interceptor Sandbox
-"""
-
-import asyncio
-import aiohttp
-import json
-
-
 class MCPClient:
     """Simple MCP client implementation"""
     
@@ -460,31 +446,15 @@ class MCPClient:
 # Example usage
 async def main():
     """Example of using the MCP client"""
-    
-    async with MCPClient("http://localhost:7860") as client:
-        
-        # List all available tools
-        tools = await client.list_tools()
-        print(f"Available tools: {len(tools['tools'])}")
-        
-        # Execute Python code
-        result = await client.execute_python('''
-result = sum(range(10))
-print(f"Sum of 0-9: {result}")
-        ''')
-        
-        print(f"Python execution result: {result}")
-        
-        # Execute bash command
-        result = await client.execute_bash("echo 'Hello from bash!'")
-        print(f"Bash execution result: {result}")
+    print("MCP Server is running. Use the hybrid application for full functionality.")
+    # Example usage would go here
+    # async with MCPClient("http://localhost:7860") as client:
+    #     tools = await client.list_tools()
+    #     print(f"Available tools: {len(tools['tools'])}")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
-'''
-    
-    return client_example
 
 
 # Export for easy import

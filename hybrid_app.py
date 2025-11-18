@@ -668,9 +668,9 @@ echo "" """,
     # MCP tools examples
     mcp_examples = [
         {
-            "name": "File Operations",
+            "name": "File Operations", 
             "tool": "file_write",
-            "parameters": '{"path": "/tmp/code_sandbox/test.txt", "content": "Hello from MCP!"}'
+            "parameters": '{"path": "/tmp/test.txt", "content": "Hello MCP"}'
         },
         {
             "name": "Python Analysis",
